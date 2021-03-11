@@ -1,5 +1,6 @@
 pipeline {
 	agent{docker{image 'node:14-alpine'}}
+	tools {nodejs "NodeJs"}
 	environment{
 		CONNECTION_STRING="ConnectionString"
 		HelloWorldId=credentials("HelloWorldId")
