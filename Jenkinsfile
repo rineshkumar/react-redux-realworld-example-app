@@ -25,7 +25,7 @@ pipeline {
 				echo "JOB_NAME ${env.JOB_NAME}"
 				echo "NODE_NAME ${env.NODE_NAME}"
 				echo "WORKSPACE ${env.WORKSPACE}"
-				echo "Reading jenkins credentials 
+				echo "Reading jenkins credentials" 
 				echo "HelloWorldId ${HelloWorldId}"
 			}
 		}
