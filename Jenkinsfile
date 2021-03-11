@@ -28,6 +28,12 @@ pipeline {
 				echo "Reading jenkins credentials" 
 				echo "HelloWorldId ${HelloWorldId}"
 			}
+			
+		}
+		stage('Running Tests '){
+			steps{
+				sh 'npm test'
+			}
 		}
 	}
 	post {
