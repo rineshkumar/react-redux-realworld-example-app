@@ -3,11 +3,9 @@ pipeline {
 	stages{
 		stage('build'){
 			steps{
-
-				sh '''
-					npm --version 
-					echo "Hello World"
-				'''
+				retry(3){
+					sh './HelloWorld.sh'
+				}
 			}
 		}
 	}
