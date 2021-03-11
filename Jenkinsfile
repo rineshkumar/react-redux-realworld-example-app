@@ -1,5 +1,5 @@
 pipeline {
-	agent{docker{image 'node:14-alpine'}}
+	agent{docker{image 'docker:latest'}}
 	tools {nodejs "NodeJs"}
 	environment{
 		CONNECTION_STRING="ConnectionString"
