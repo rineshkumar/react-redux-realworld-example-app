@@ -6,7 +6,7 @@ pipeline {
 				retry(3){
 					sh './HelloWorld.sh'
 				}
-				timeout(time : 3, units : 'SECONDS'){
+				timeout(time : 3, unit : 'SECONDS'){
 					sh './HelloWorld.sh'
 				}
 			}
