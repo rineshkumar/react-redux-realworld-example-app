@@ -29,7 +29,7 @@ pipeline {
 				echo "Reading jenkins credentials" 
 				echo "HelloWorldId ${HelloWorldId}"
 
-				sh 'npm build'
+				sh 'npm run build'
 			}
 			
 		}
