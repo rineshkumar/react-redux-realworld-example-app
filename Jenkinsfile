@@ -39,7 +39,7 @@ pipeline {
 		stage('Running Tests '){
 			steps{
 				// Needs fix 
-			#	sh 'npm test'
+				// sh 'npm test'
 			}
 		}
 		stage('Deploy'){
