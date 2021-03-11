@@ -38,6 +38,7 @@ pipeline {
 		}
 		stage('Running Tests '){
 			steps{
+				echo "Testing the application"
 				// Needs fix 
 				// sh 'npm test'
 			}
