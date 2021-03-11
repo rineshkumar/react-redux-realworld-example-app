@@ -2,7 +2,7 @@ pipeline{
     environment{ 
 		gitUrl="https://github.com/rineshkumar/react-redux-realworld-example-app.git"
         registry = "rineshkumar/expressapp" 
-        registryCredential = credentials('dockerLogin')
+        registryCredential = 'dockerLogin'//credentials('dockerLogin')
         dockerImageName = "${registry}:${env.BUILD_ID}"
 		
     }
@@ -24,7 +24,7 @@ pipeline{
         stage("Deploy our image"){
             steps{
                 script{ 
-                    docker.withRegistry( "", credential('dockerLogin') ){
+                    docker.withRegistry( "", 'dockerLogin' ){
                         dockerImage.push() 
                     }
                 }
