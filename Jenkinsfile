@@ -41,10 +41,8 @@ pipeline {
 
                 script { 
 
-                    docker.withRegistry( '', "${env.registryCredential} ) { 
-
+                    docker.withRegistry( '', "${env.registryCredential}" ){
                         dockerImage.push() 
-
                     }
 
                 } 
