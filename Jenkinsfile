@@ -1,17 +1,13 @@
-pipeline{
-	agent {
-		docker {
-			{ image 'node:14-alpine' }
-		}
-	}
+pipeline {
+	agent { docker { imgage 'node:14-alpine' } }
 	stages{
-		Stage('build'){
+		stage('build'){
 			steps{
 				sh '''
-					npm --version
-					echo "Hello World "
+					npm --version 
+					echo "Hello World"
 				'''
 			}
 		}
-	}	
+	}
 }
