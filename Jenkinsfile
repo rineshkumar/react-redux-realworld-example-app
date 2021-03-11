@@ -32,10 +32,10 @@ pipeline {
 				echo "WORKSPACE ${env.WORKSPACE}"
 				echo "Reading jenkins credentials" 
 				echo "HelloWorldId ${HelloWorldId}"
-				sh '''
-					npm install 
-					npm run build
-				'''
+				// sh '''
+				// 	npm install 
+				// 	npm run build
+				// '''
 			}
 			
 		}
