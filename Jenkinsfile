@@ -1,5 +1,8 @@
 pipeline {
 	agent{docker{image 'node:14-alpine'}}
+	environment{
+		CONNECTION_STRING="ConnectionString"
+	}
 	stages{
 		stage('build'){
 			steps{
@@ -9,6 +12,7 @@ pipeline {
 				timeout(time : 3, unit : 'SECONDS'){
 					sh './HelloWorld.sh'
 				}
+				echo "Connections string from environment ${env.CONNECTION_STRING}"
 			}
 		}
 	}
