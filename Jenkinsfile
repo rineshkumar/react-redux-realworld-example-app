@@ -12,4 +12,18 @@ pipeline {
 			}
 		}
 	}
+	post {
+		success{
+			echo "Build succeeded "
+		}
+		failure{
+			echo "Build failed"
+		}
+		unstable{
+			echo "Build is unstable"
+		}
+		changed{
+			echo "Build status has changed"
+		}
+	}
 }
