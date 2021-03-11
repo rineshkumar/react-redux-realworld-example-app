@@ -48,11 +48,12 @@ pipeline {
 		}
 		stage("Upload Image"){
 			steps{
-					docker.withRegistry( '', '${env.registryCredential}' ) {
+					script{
+						docker.withRegistry( '', '${env.registryCredential}' )
 						dockerImage.push()
+					}
 					
 				}
-			}
 		}
 		stage("cleaning local image"){
 			steps{
