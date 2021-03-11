@@ -24,7 +24,7 @@ pipeline{
         stage("Deploy our image"){
             steps{
                 script{ 
-                    docker.withRegistry( "", "${env.registryCredential}" ){
+                    docker.withRegistry( "", credential('dockerLogin') ){
                         dockerImage.push() 
                     }
                 }
