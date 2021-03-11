@@ -47,7 +47,7 @@ pipeline {
 			}
 		}
 		stage("Upload Image"){
-			Steps{
+			steps{
 				scripts{
 					dockerImage.push()
 				}
