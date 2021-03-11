@@ -2,6 +2,7 @@ pipeline {
 	agent{docker{image 'node:14-alpine'}}
 	environment{
 		CONNECTION_STRING="ConnectionString"
+		HelloWorldId=credentials("HelloWorldId")
 	}
 	stages{
 		stage('build'){
@@ -24,6 +25,8 @@ pipeline {
 				echo "JOB_NAME ${env.JOB_NAME}"
 				echo "NODE_NAME ${env.NODE_NAME}"
 				echo "WORKSPACE ${env.WORKSPACE}"
+				echo "Reading jenkins credentials 
+				echo "HelloWorldId ${HelloWorldId}"
 			}
 		}
 	}
