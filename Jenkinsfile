@@ -8,6 +8,7 @@ pipeline {
 	stages{
 		stage('build'){
 			steps{
+
 				retry(3){
 					sh './HelloWorld.sh'
 				}
@@ -28,8 +29,10 @@ pipeline {
 				echo "WORKSPACE ${env.WORKSPACE}"
 				echo "Reading jenkins credentials" 
 				echo "HelloWorldId ${HelloWorldId}"
-
-				sh 'npm run build'
+				sh '''
+					npm install 
+					npm run build
+				'''
 			}
 			
 		}
