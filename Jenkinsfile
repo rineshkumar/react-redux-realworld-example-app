@@ -27,7 +27,7 @@ pipeline {
 
                 script { 
 
-                    dockerImage = docker.build ${env.registry} + ":" +${env.BUILD_NUMBER}
+                    dockerImage = docker.build "${env.dockerImageName}"
 
                 }
 
