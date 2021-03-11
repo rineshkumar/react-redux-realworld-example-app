@@ -2,8 +2,9 @@ pipeline{
     environment{ 
 		gitUrl="https://github.com/rineshkumar/react-redux-realworld-example-app.git"
         registry = "rineshkumar/expressapp" 
-        registryCredential = credentials(env.dockerLogin)
+        registryCredential = credentials('dockerLogin')
         dockerImageName = "${registry}:${env.BUILD_ID}"
+		
     }
     agent any 
     stages{
