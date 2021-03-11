@@ -42,7 +42,8 @@ pipeline {
 		stage("Make docker image "){
 			steps{
 				script{
-					dockerImage = docker.build ${env.registry}+"$env.BUILD_ID"
+					//dockerImage = docker.build ("${env.registry}:${env.BUILD_ID}"
+					dockerImage = docker.build("${env.registry}:${env.BUILD_ID}")
 				}
 			}
 		}
