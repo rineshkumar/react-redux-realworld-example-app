@@ -44,7 +44,9 @@ pipeline {
 			}
 		}
 		stage('Deploy'){
-			input "Should the application be deployed "
+			steps{
+				input "Should the application be deployed "
+			}
 		}
 	}
 	post {
