@@ -4,6 +4,9 @@ pipeline {
 	environment{
 		CONNECTION_STRING="ConnectionString"
 		HelloWorldId=credentials("HelloWorldId")
+		registry="rineshkumar/expressapp"
+		registryCredential="dockerLogin"
+		dockerImage = '' 
 	}
 	stages{
 		stage('build'){
@@ -35,6 +38,25 @@ pipeline {
 				'''
 			}
 			
+		}
+		stage("Make docker image "){
+			steps{
+				script{
+					dockerImage = docker.build ${env.registry}+"$env.BUILD_ID"
+				}
+			}
+		}
+		stage("Upload Image"){
+			Steps{
+				scripts{
+					dockerImage.push()
+				}
+			}
+		}
+		stage("cleaning local image"){
+			steps{
+				sh "docker rmi ${env.registry}"+"$env.BUILD_ID"
+			}
 		}
 		stage('Running Tests '){
 			steps{
