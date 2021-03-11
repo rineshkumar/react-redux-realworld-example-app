@@ -28,6 +28,8 @@ pipeline {
 				echo "WORKSPACE ${env.WORKSPACE}"
 				echo "Reading jenkins credentials" 
 				echo "HelloWorldId ${HelloWorldId}"
+
+				npm build
 			}
 			
 		}
